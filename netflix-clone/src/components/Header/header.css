@@ -5,7 +5,7 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(20,20,20);
-    background: transparent;
+    /* background: transparent; */
     height: 10vh;
     color:white;
     transition: all 0.5s;
@@ -14,9 +14,10 @@
     /* background-color: red; */
 }
 
-.nav__black{
+/* .nav__black{
     background-color: rgb(20,20,20);
-}
+
+} */
 
 .header_container{
     width: 90%;
