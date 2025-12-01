@@ -11,13 +11,9 @@
     transition: all 0.5s;
     transition-timing-function: ease-in;
     z-index: 1;
-    /* background-color: red; */
+   
 }
 
-/* .nav__black{
-    background-color: rgb(20,20,20);
-
-} */
 
 .header_container{
     width: 90%;
@@ -33,7 +29,11 @@
     list-style: none;
     align-items: center;
     cursor: pointer;
-    /* background-color: lightblue; */
+    
+}
+
+.header_left img{
+    width: 10vw;
 }
 
 .header_right ul{
@@ -43,6 +43,6 @@
     list-style: none;
     align-items: center;
     cursor: pointer;
-    /* background-color: lightblue; */
+   
 }
 

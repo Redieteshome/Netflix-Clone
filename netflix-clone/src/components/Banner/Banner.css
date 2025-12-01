@@ -1,7 +1,6 @@
 .banner {
   margin-top: -10vh;
-  height: 80vh;
-  /* margin-bottom: -80px; */
+  height: 100vh;
   color: white;
   object-fit: contain;
   display: flex;
