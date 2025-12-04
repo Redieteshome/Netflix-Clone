@@ -14,10 +14,12 @@ function Banner() {
         // Fetch the list of Netflix original shows/movies
         const request = await axios.get(requests.fetchNetflixOriginals);
 
+        const results = request.data.results;
+        console.log(results)
         // Pick one random movie from the results
         setMovie(
-          request.data.results[
-            Math.floor(Math.random() * request.data.results.length)
+          results[
+            Math.floor(Math.random() * results.length)
           ]
         );
       } catch (error) {

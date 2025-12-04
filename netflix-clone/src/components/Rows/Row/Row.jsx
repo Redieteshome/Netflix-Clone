@@ -22,7 +22,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
         const request = await axios.get(fetchUrl);
 
         // Logs the API response for debugging
-        console.log(request);
+        // console.log(request);
 
         // Save movie list to state
         SetMovie(request.data.results);
@@ -44,8 +44,17 @@ function Row({ title, fetchUrl, isLargeRow }) {
       movieTrailer(movie?.title || movie?.name || movie?.original_name).then(
         (url) => {
           // Extract the "v" parameter (video ID) from the YouTube URL
-          const urlParams = new URLSearchParams(new URL(url).search);
+          // Example returned URL from movieTrailer:
+          // "https://www.youtube.com/watch?v=4ZJsUvFgfq0&t=12s"
+          //
+          // new URL(url) extracts the different parts of the URL
+          // new URL(url).search returns the part AFTER "?" :
+          // "?v=4ZJsUvFgfq0&t=12s"
+          const urlParams = new URLSearchParams(new URL(url).search); // "?v=4ZJsUvFgfq0";
 
+          console.log(new URL(url));
+          console.log(urlParams);
+          console.log(urlParams.get("v")); //extracts ONLY the video ID:
           // Store video ID in state
           SetTrailerUrl(urlParams.get("v"));
         }
@@ -76,6 +85,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
               // When clicked, show trailer for this movie
               onClick={() => handleClick(movie)}
               key={index}
+              
               // Poster or backdrop based on size prop
               src={`${base_url}${
                 isLargeRow ? movie.poster_path : movie.backdrop_path
@@ -89,7 +99,9 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
         {/* Trailer appears below row when poster is clicked */}
         <div style={{ padding: "40px" }}>
-          {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+          {trailerUrl && (
+            <YouTube videoId={trailerUrl} opts={opts} />
+          )}
         </div>
       </div>
     </>
