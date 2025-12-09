@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./header.css";
 
 // Logo & Icons
-import NetflixLogo from "../../assets/images/Netflix_logo.PNG";
+import NetflixLogo from "../../assets/images/Netflix_logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";

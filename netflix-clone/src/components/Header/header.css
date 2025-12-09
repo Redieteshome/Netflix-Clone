@@ -30,7 +30,7 @@
     list-style: none;
     align-items: center;
     cursor: pointer;
-    
+    /* margin-left: auto; */
 }
 
 .header_left img{
